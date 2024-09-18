@@ -1,0 +1,17 @@
+To replace a game dialogue with one of the Database, the folder "userdata" of the game must contains a file "keys.txt" where each line of content looks like this (case-sensitive) :
+
+mape_name % X = GAME_DIALOGUE_FILE*TAG % ONLINE_DIALOGUE_FILE
+
+- map_name : name of the map in the game
+- X : a num from 1 to 9 (9 possible changeing of dilogues for a same map)
+- GAME_DIALOGUE_FILE : the exact name of the dialogue file
+- *TAG : (facultative) the very specific part of the dialogue that is supposed to be read in the file. Can be the whole file (no tag required)
+- ONLINE_DIALOGUE_FILE : the name of the online text file that will be read instead.
+
+Exemple :
+laboratory_0 % 1 = DAVE*CHOSEN_ONE % event/EVENT
+
+Explanation :
+on the map "laboratory_0", the "CHOSEN_ONE" part of the dialogue file "DAVE" won't be read. Instead, the player will get the dialogue from the file "EVENT", in the folder "event", in this very Database.
+
+Note : the replacement dialogue is calculated during the loading screen, at the start of the map containing the dialogue.
